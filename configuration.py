@@ -21,6 +21,8 @@ class Configuration:
     def load_from_command_line(self, parser=Parser()):
         """Récupère les paramètres de la ligne de commande pour
         configurer l'application."""
+        parser.parse()
+
         if parser.is_valide():
             parametres = parser.get_parametres()
 
