@@ -18,7 +18,7 @@ class Configuration:
         self.user = "anonymous"
         self.password = None
 
-    def load_from_command_line(self, parser):
+    def load_from_command_line(self, parser=Parser()):
         """Récupère les paramètres de la ligne de commande pour
         configurer l'application."""
         if parser.is_valide():
