@@ -1,6 +1,7 @@
 #!/usr/bin/python3.3
 # -*-coding:Utf-8 *-
 
+import ftplib
 import os
 import tempfile
 import zipfile
@@ -100,7 +101,9 @@ class SaveFTP():
     def run(self):
         self.build_liste_fichiers()
         self.build_archive()
-        self.send_to_hote()
+
+        ftp = ftplib.FTP(self.configuration.hote)
+        self.send_to_hote(ftp)
 
 if __name__ == '__main__':
     app = SaveFTP()
